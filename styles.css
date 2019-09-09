@@ -1,0 +1,53 @@
+body {
+background-color: teal;
+
+}
+
+#reset {
+width: 400px;
+height: 200px;
+background-image:url(reset.png);
+position: absolute;
+top: 40px;
+left: 110px;
+}
+
+#reset:hover {   
+    background-image:url(resethover.png);
+}
+
+#squarecreator {
+width: 400px;
+height: 200px;
+background-image:url(howmanysquares.png);
+position: absolute;
+top: 280px;
+left: 110px
+
+}
+
+#squarecreator:hover {
+  background-image:url(howmanysquareshover.png);
+}
+
+
+
+#container {
+    position: absolute;
+    left: 550px;
+    top: 40px;
+    margin: 0 auto;
+    width: 800px;
+    height: 800px;
+    display: grid;
+    grid-gap: 0px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+
+    background-color: white;
+
+
+  }
+
+  

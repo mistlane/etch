@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ayy lmao</title>
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+    </head>
+
+    <body>  
+        <button id = "reset" onclick="clearGrid()"></button>
+        <button id = "squarecreator" onclick="SquareCreator()"></button>
+
+        <div id="container">
+            
+        </div>
+    </body>
+
+    <script>
+
+        let ColumnsAmount = 16
+        SquaresAmount = ColumnsAmount*ColumnsAmount
+        
+
+        
+
+        
+        
+        function Sketcher(ColumnsAmount, SquaresAmount) {
+                i = 0
+                const container = document.querySelector('#container');
+                while (i < SquaresAmount) {
+                    const content = document.createElement('div');
+                    content.setAttribute("class", "cell");
+                    container.appendChild(content);
+            
+                    i = i+1
+                }
+                
+            
+                container.addEventListener('mouseover', getColor);
+
+                function getColor(event) {
+                let solu=event.target
+            
+                solu.style.backgroundColor= "black";
+                }
+
+                let str = "auto ";
+                let kerroin = str.repeat(ColumnsAmount);
+             
+
+                document.getElementById("container").style.gridTemplateColumns = kerroin;
+                SquaresAmount = SquaresAmount
+                
+                
+        }
+
+
+        function clearGrid() {
+
+            var SquaresAmount = document.querySelectorAll('#container .cell').length;
+            console.log(SquaresAmount)
+            var cell = document.getElementsByClassName("cell");
+            for(i = 0; i < SquaresAmount; i++) {
+                cell[i].style.backgroundColor = "white";
+            }
+        }
+
+        
+        
+
+       
+       
+       function SquareCreator() {
+            let NewColumnsAmount = prompt("Amount of squares:")
+            const container = document.querySelector('#container')
+            while(container.firstChild) container.firstChild.remove()
+            Sketcher(NewColumnsAmount, NewColumnsAmount*NewColumnsAmount)
+        
+
+       }
+
+       Sketcher(ColumnsAmount, ColumnsAmount*ColumnsAmount)
+
+    </script>
+</html>
